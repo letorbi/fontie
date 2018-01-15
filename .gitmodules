@@ -1,0 +1,3 @@
+[submodule "fontsmoothie"]
+	path = fontsmoothie
+	url = https://gist.github.com/5177771.git
