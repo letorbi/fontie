@@ -1,0 +1,82 @@
+#!/usr/local/bin/fontforge
+
+features_count = 0
+valid_count = 0
+invalid_count = 0
+
+Open($1)
+SelectWorthOutputting()
+
+g = 0
+foreach
+    g++
+endloop
+
+Print(g)
+
+glyphs = Array(g)
+i = 0
+foreach
+    glyphs[i] = GlyphInfo("Name")
+    i++
+endloop
+
+foreach
+    features = GetPosSub("*")
+    RemovePosSub("*")
+    size_f = SizeOf(features)
+    features_count = features_count + size_f
+    i = 0
+    while (i < size_f)
+        #Print(features[i])
+        l = 0
+        if (features[i][1] == "Position")
+        elseif (features[i][1] == "Pair")
+            checks = Array(1) 
+            checks[0] = features[i][2]
+            l = 1;
+        else
+            l = SizeOf(features[i])
+            checks = Array(l-2)
+            checks[0] = features[i][2]
+            params = features[i][2]
+            j = 3
+            while (j < l)
+                checks[j-2] = features[i][j]
+                params = params + " " + features[i][j]
+                j++
+            endloop
+            l = SizeOf(checks)
+        endif
+        j = 0
+        valid = 0
+        while (j < l)
+            k = 0
+            while (k < g)
+                if (checks[j] == glyphs[k])
+                    valid = valid + 1
+                endif
+                k++
+            endloop
+            j++
+        endloop
+        if (l == valid)
+            if (features[i][1] == "Position")
+                AddPosSub(features[i][0], features[i][2], features[i][3], features[i][4], features[i][5])
+            elseif (features[i][1] == "Pair")
+                AddPosSub(features[i][0], features[i][2], features[i][3], features[i][4], features[i][5], features[i][6], features[i][7], features[i][8], features[i][9], features[i][10])
+            else
+                AddPosSub(features[i][0], params)
+            endif
+            valid_count++
+        else
+            invalid_count++
+        endif
+        i++
+    endloop
+endloop
+
+Print(features_count)
+Print(valid_count)
+Print(invalid_count)
+Save($2)
