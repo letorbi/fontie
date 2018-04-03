@@ -7,7 +7,7 @@ font-files and trigger the genration of the font-package by the backend.
 The Fontie backend is licensed as open source under the AGPL v3.
 
 ***Note:** Originally I wanted to refactor the code and write some documentation, but I’ve never found the
-time to do so - sry for that. I'll add some extra documwntation as soon as I find some time... I
+time to do so - sry for that. I'll add some extra documentation as soon as I find the time... I
 really, really appreciate any clean-up/optimizing PRs from experienced Python/Fontforge developers
 as this is my first python project. But also other PRs are nice, too :)*
 
