@@ -28,7 +28,7 @@ These MUST be installed before you attempt to convert a font with fontie!!
   - `scour`
      - sudo apt install scour
   - `wine /opt/eotfast/EOTFAST-1.EXE`
-     - this is only required for building eot fonts (internet explorer) AFAIK. 
+     - this is only required for building eot fonts (internet explorer) 
      - TODO how to install this is undocumented 
     
 
