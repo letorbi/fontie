@@ -37,32 +37,6 @@ class FontieRequestHandler(http.server.BaseHTTPRequestHandler):
                 result.append(fields.value)
         return result
 
-    def handle(self):
-        with tempfile.TemporaryFile('w+') as logfile:
-            try:
-                exception = False
-                stdout = os.dup(sys.stdout.fileno())
-                stderr = os.dup(sys.stderr.fileno())
-                sys.stdout.flush()
-                sys.stderr.flush()
-                os.dup2(logfile.fileno(), sys.stdout.fileno())
-                os.dup2(logfile.fileno(), sys.stderr.fileno())
-                super(FontieRequestHandler, self).handle()
-            except Exception as e:
-                if not (hasattr(e, 'errno') and e.errno == errno.EPIPE):
-                    exception = True
-                    self.send_response(500)
-                raise
-            finally:
-                sys.stdout.flush()
-                sys.stderr.flush()
-                sys.stdout = os.fdopen(stdout, 'w')
-                sys.stderr = os.fdopen(stderr, 'w')
-                if exception:
-                    print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-                    logfile.seek(0)
-                    print(logfile.read())
-
     def do_POST(self):
         path = self.path[:self.path.rfind("/")]
         if path == "/font":
@@ -120,6 +94,8 @@ class FontieRequestHandler(http.server.BaseHTTPRequestHandler):
                 raise FontieException(400, 'missing fonts')
             package = FontiePackage()
             for font in self._fields_to_options(fields['font']):
+
+                print(font)
                 package.add(font)
             if 'fixes' in fields:
                 package.fix(self._fields_to_options(fields['fixes']))
