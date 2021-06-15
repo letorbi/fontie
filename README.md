@@ -18,7 +18,7 @@ These MUST be installed before you attempt to convert a font with fontie!!
      - See "using fontforge as a python package"
   - `ttfautohint`
      - `apt install -y ttfautohint` worked for me.
-     - you can download source from https://download.savannah.gnu.org/releases/freetype/ but I was unable to get this to work.
+     - you can download source from https://download.savannah.gnu.org/releases/freetype/ in case you can't find a pre-built package for your system.
      - test your installation by running `ttfautohint`
   - `/opt/woff2/woff2_compress`
      - I downloaded this from https://github.com/google/woff2 with `cd /opt && git clone https://github.com/google/woff2 && cd woff2`
