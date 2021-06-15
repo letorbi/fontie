@@ -26,7 +26,7 @@ These MUST be installed before you attempt to convert a font with fontie!!
      - finally, in order to build it, run `make`.
      - test it by running `/opt/woff2/woff2_compress`
   - `scour`
-     - sudo apt install scour
+     - `apt install -y scour`
   - `wine /opt/eotfast/EOTFAST-1.EXE`
      - this is only required for building eot fonts (internet explorer) 
      - TODO how to install this is undocumented 
@@ -41,7 +41,6 @@ First, clone the fontforge repository:
 cd /opt
 git clone https://github.com/ForestJohnson/fontie 
 cd fontie
-pipenv install
 ```
 
 ## using fontforge as a python package
@@ -49,10 +48,10 @@ pipenv install
 You can't actually install fontforge python package via pip! https://github.com/fontforge/fontforge/issues/4377
 So you have to install it via your OS package manager. 
 
-For (ubuntu/debian):
+For ubuntu/debian for example:
 
 ```
-sudo apt-get install fontforge
+apt install -y fontforge
 ```
 
 NOTE: According to https://fontforge.org/docs/scripting/python.html#python-extension  
@@ -79,7 +78,7 @@ We can sidestep this problem by running the fontie API server through the fontfo
 fontforge -lang=py -script bin/fontie.py 
 ```
 
-# Using Fontie Locally 
+# Hosting Fontie Locally 
 
 TODO How to set up your own fontie server that other people can use is undocumented right now.
 
