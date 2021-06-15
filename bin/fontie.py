@@ -94,8 +94,6 @@ class FontieRequestHandler(http.server.BaseHTTPRequestHandler):
                 raise FontieException(400, 'missing fonts')
             package = FontiePackage()
             for font in self._fields_to_options(fields['font']):
-
-                print(font)
                 package.add(font)
             if 'fixes' in fields:
                 package.fix(self._fields_to_options(fields['fixes']))
