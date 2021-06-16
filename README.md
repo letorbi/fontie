@@ -2,7 +2,7 @@
 
 The deamon that is running in the back of [Fontie](https://fontie.pixelsvsbytes.com). It is licensed as open source under the AGPL v3.
 
-*The code is working and used in production. However, it is not really fit for public use. Originally I wanted to refactor the code , but I’ve never found the time to do so - sry for that. I really, really appreciate any clean-up/optimizing PRs from experienced Python/Fontforge developers as this is my first python project. But also other PRs are nice, too :)*
+*The code is working and used in production. However, it is not really fit for public use. Originally I wanted to refactor the code , but I’ve never found the time to do so - sry for that. I really, really appreciate any clean-up/optimizing PRs from experienced Python/Fontforge developers. But also other PRs are nice, too :)*
 
 ## Installation
 
@@ -135,4 +135,4 @@ mv /tmp/fontie_707d50ce-8998-4e85-b391-d788fe57c8d8/fontie-package ~/Desktop/Bla
 
 ----
 
-Copyright 2013-2018 Torben Haase \<https://pixelsvsbytes.com>
+Copyright 2013-2021 Torben Haase \<https://pixelsvsbytes.com>
