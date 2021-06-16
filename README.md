@@ -1,10 +1,8 @@
 # Fontie
 
-The deamon that is running in the back of [Fontie](https://fontie.pixelsvsbytes.com). The backend
-is where all the font conversion "magic" happens. The frontend is just an interface to upload the
-font-files and trigger the genration of the font-package by the backend.
+The deamon that is running in the back of [Fontie](https://fontie.pixelsvsbytes.com). It is licensed as open source under the AGPL v3.
 
-The Fontie backend is licensed as open source under the AGPL v3.
+*The code is working and used in production. However, it is not really fit for public use. Originally I wanted to refactor the code , but I’ve never found the time to do so - sry for that. I really, really appreciate any clean-up/optimizing PRs from experienced Python/Fontforge developers as this is my first python project. But also other PRs are nice, too :)*
 
 ## Installation
 
