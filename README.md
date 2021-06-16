@@ -6,11 +6,11 @@ font-files and trigger the genration of the font-package by the backend.
 
 The Fontie backend is licensed as open source under the AGPL v3.
 
-# Installation
+## Installation
 
 This guide assumes that you are simply trying to run fontie on your own Linux/UNIX-ish computer. This guide is a work in progress and not guaranteed to work.
 
-## dependencies 
+### dependencies 
 
 These MUST be installed before you attempt to convert a font with fontie!!
 
@@ -32,7 +32,7 @@ These MUST be installed before you attempt to convert a font with fontie!!
      - TODO how to install this is undocumented 
     
 
-## obtaining fontie
+### obtaining fontie
 
 First, clone the fontforge repository:
 
@@ -43,7 +43,7 @@ git clone https://github.com/ForestJohnson/fontie
 cd fontie
 ```
 
-## using fontforge as a python package
+### using fontforge as a python package
 
 You can't actually install fontforge python package via pip! https://github.com/fontforge/fontforge/issues/4377
 So you have to install it via your OS package manager. 
@@ -78,11 +78,11 @@ We can sidestep this problem by running the fontie API server through the fontfo
 fontforge -lang=py -script bin/fontie.py 
 ```
 
-# Hosting Fontie Locally 
+## Hosting Fontie Locally 
 
 TODO How to set up your own fontie server that other people can use is undocumented right now.
 
-## Sending a request using cURL
+### Sending a request using cURL
 
 The following was obtained from https://fontie.pixelsvsbytes.com/webfont-generator by clicking `Generate & download your @font-face package`  and then opening the browser debugger to the network tab, right clicking the POST request, and choosing "copy as cURL":
 
