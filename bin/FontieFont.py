@@ -126,7 +126,7 @@ class FontieFont:
 
     def open(self, id):
         path = os.path.join(FONT_ROOT, id)
-        orig = "%s_orignal" % path
+        orig = os.path.abspath("%s_orignal" % path)
         if not os.path.exists(orig):
             raise FontieException(404, "font original does not exist")
         shutil.copy(orig, path)
