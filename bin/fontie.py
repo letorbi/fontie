@@ -228,7 +228,7 @@ def run():
 if len(sys.argv) < 2:
     run()
 else:
-    daemon = FontieDaemon("/var/run/fontie.pid")
+    daemon = FontieDaemon("/var/run/fontie/fontie.pid")
     if sys.argv[1] == "start":
         daemon.start()
     elif sys.argv[1] == "stop":
