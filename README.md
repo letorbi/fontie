@@ -1,3 +1,9 @@
+## Project Moved
+
+**[This repository has been moved to Codeberg](https://codeberg.org/letorbi/fontie)**. The GitHub repository will be deleted after a transition period. Please update your links and references accordingly.
+
+---
+
 # Fontie
 
 The deamon that is running in the back of [Fontie](https://fontie.pixelsvsbytes.com). It is licensed as open source under the AGPL v3.
